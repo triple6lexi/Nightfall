@@ -1,3 +1,4 @@
+-- taken from Aquillarri
 local nfall_colors = {
     SMODS.Gradient {
         key = "fabled",
