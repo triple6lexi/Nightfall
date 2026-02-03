@@ -1,0 +1,18 @@
+{
+	"id": "Nightfall",
+	"name": "Nightfall",
+	"display_name": "Nightfall-DEV",
+	"author": [
+		"triple6lexi"
+	],
+	"description": "A mod",
+	"prefix": "nfall",
+	"main_file": "Nightfall.lua",
+	"priority": 170074,
+	"badge_colour": "170074",
+	"badge_text_colour": "674adf",
+	"version": "0.0.1~DEV",
+	"dependencies": [
+		"Steamodded (>=1.0.0~BETA-1224a)"
+	]
+}
