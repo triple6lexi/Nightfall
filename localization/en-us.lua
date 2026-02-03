@@ -1,7 +1,7 @@
 return {
 	descriptions = {
 		Back = {
-			couponer = {
+			b_nfall_couponer = {
 				name = {
 					"Couponer Deck",
 				},
@@ -31,7 +31,7 @@ return {
 					"Freeroll",
 				},
 				text = {
-					"{C:attention}#1#{} free {C:green}Rerolls",
+					"{C:attention}#1#{} free {C:green}Reroll",
 					"per shop",
 				},
 			},
@@ -61,7 +61,9 @@ return {
 	misc = {
 		suits_singular = {},
 		suits_plural = {},
-		dictionary = {},
+		dictionary = {
+			k_nfall_fabled = "Fabled"
+		},
 		v_dictionary = {},
 	},
 }

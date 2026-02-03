@@ -14,15 +14,16 @@ SMODS.Voucher({
 	},
 	discovered = true,
 	cost = 15,
+	min_ante = 3,
 	config = {
 		extra = {
-			rerolls = 2,
+			rerolls = 1,
 		},
 	},
 	loc_vars = function(self, info_queue, card)
 		return {
 			vars = {
-				self.config.extra.rerolls,
+				card.ability.extra.rerolls,
 			},
 		}
 	end,
@@ -40,16 +41,17 @@ SMODS.Voucher({
 	},
 	discovered = true,
 	requires = { "v_nfall_freeroll" },
-	cost = 15,
+	cost = 20,
+	min_ante = 3,
 	config = {
 		extra = {
-			rerolls = 3,
+			rerolls = 2,
 		},
 	},
 	loc_vars = function(self, info_queue, card)
 		return {
 			vars = {
-				self.config.extra.rerolls,
+				card.ability.extra.rerolls,
 			},
 		}
 	end,
