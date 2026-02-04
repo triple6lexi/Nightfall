@@ -14,7 +14,6 @@ SMODS.Voucher({
 	},
 	discovered = true,
 	cost = 15,
-	min_ante = 3,
 	config = {
 		extra = {
 			rerolls = 1,
@@ -42,7 +41,6 @@ SMODS.Voucher({
 	discovered = true,
 	requires = { "v_nfall_freeroll" },
 	cost = 20,
-	min_ante = 3,
 	config = {
 		extra = {
 			rerolls = 2,
@@ -57,5 +55,28 @@ SMODS.Voucher({
 	end,
 	redeem = function(self, card)
 		SMODS.change_free_rerolls(card.ability.extra.rerolls)
+	end,
+})
+
+SMODS.Voucher({
+	key = "handlevel",
+	atlas = "vouchers",
+	pos = {
+		x = 0,
+		y = 1,
+	},
+	discovered = true,
+	cost = 20,
+	calculate = function(self, card, context)
+		if context.using_consumeable and context.consumeable.ability.set == "Spectral" then
+			SMODS.upgrade_poker_hands({
+				hands = {
+					pseudorandom_element(SMODS.PokerHands, "nfall_handlevelvoucher").key,
+					pseudorandom_element(SMODS.PokerHands, "nfall_handlevelvoucher").key,
+					pseudorandom_element(SMODS.PokerHands, "nfall_handlevelvoucher").key,
+				},
+				level_up = 1,
+			})
+		end
 	end,
 })

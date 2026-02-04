@@ -1,1 +1,1 @@
--- make something to spawn fableds at a fixed 33% chance
+-- make something to spawn fabled jokers at a fixed 33% chance
