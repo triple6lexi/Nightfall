@@ -77,8 +77,14 @@ return {
 					"Cosmic Ray2",
 				},
 				text = {
-					"Level up 3 random {C:attention}poker hands{}",
-					"when any {C:attention}Consumable{} is used",
+					{
+						"Level up 3 random {C:attention}poker hands{}",
+						"when any {C:attention}Consumable{} is used",
+					},
+					{
+						"{C:spectral}Spectral{} cards level up 3",
+						"additional {C:attention}poker hands{} when used",
+					},
 				},
 			},
 		},

@@ -1,1 +1,2 @@
 -- make something to spawn fabled jokers at a fixed 33% chance
+-- lowkey idfk how to make consumables so like wtf

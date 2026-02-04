@@ -66,7 +66,7 @@ SMODS.Voucher({
 		y = 1,
 	},
 	discovered = true,
-	cost = 20,
+	cost = 10,
 	calculate = function(self, card, context)
 		if context.using_consumeable and context.consumeable.ability.set == "Spectral" then
 			SMODS.upgrade_poker_hands({
@@ -90,7 +90,7 @@ SMODS.Voucher({
 	},
 	discovered = true,
 	requires = { "v_nfall_cosmic_ray" },
-	cost = 20,
+	cost = 15,
 	calculate = function(self, card, context)
 		if context.using_consumeable then -- i dont want spectrals to level up 6 but idk :scream:
 			SMODS.upgrade_poker_hands({
