@@ -12,6 +12,7 @@ return {
 			},
 		},
 		Joker = {
+			-- main jokers
 			j_nfall_cryptocurrency = {
 				name = {
 					"Cryptocurrency",
@@ -20,6 +21,24 @@ return {
 					"If you are under the",
 					"{C:money,E:1}Interest Cap{} at the end",
 					"of the round {C:money}+$#1#",
+				},
+			},
+			j_nfall_old_book = {
+				name = {
+					"Old Book",
+				},
+				text = {},
+			},
+			-- requires amulet
+			j_nfall_the_masked = {
+				name = {
+					"The Masked",
+				},
+				text = {
+					"Scored {C:spades}Spades{} give {X:nfall_echips,C:white}^#3#{C:chips} Chips",
+					"increases by {X:nfall_echips,C:white}^#1#{} for each",
+					"empty {C:attention}Joker Slot{}",
+					"Max of {X:nfall_echips,C:white}^#2#{}",
 				},
 			},
 		},
@@ -62,7 +81,8 @@ return {
 		suits_singular = {},
 		suits_plural = {},
 		dictionary = {
-			k_nfall_fabled = "Fabled"
+			k_nfall_fabled = "Fabled",
+			k_nfall_cataclysmic = "Cataclysmic",
 		},
 		v_dictionary = {},
 	},

@@ -2,6 +2,7 @@ SMODS.Joker({
 	key = "cryptocurrency",
 	discovered = true,
 	rarity = 1,
+	blueprint_compat = false,
 	config = { extra = { money = 5 } },
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = {
@@ -25,3 +26,9 @@ SMODS.Joker({
 		end
 	end,
 })
+
+SMODS.Joker { -- randomized ish effect, can be upgraded by sacrificing consumables to it making its effects stronger
+	key = "old_book",
+	rarity = "nfall_fabled",
+
+}

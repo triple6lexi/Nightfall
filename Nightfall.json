@@ -5,12 +5,11 @@
 	"author": [
 		"triple6lexi"
 	],
-	"description": "A mod",
+	"description": "you don't understand what you do to me",
 	"prefix": "nfall",
 	"main_file": "Nightfall.lua",
-	"priority": 67,
-	"badge_colour": "9a3b08",
-	"badge_text_colour": "fda64b",
+	"priority": 2,
+	"badge_colour": "38363b",
 	"version": "0.1.0-DEV-A",
 	"dependencies": [
 		"Steamodded (>=1.0.0~BETA-1224a)"

@@ -1,0 +1,1 @@
+-- make something to spawn fableds at a fixed 33% chance
