@@ -29,14 +29,14 @@ return {
 				},
 				text = {},
 			},
-			-- requires amulet
+			-- jokers that require amulet below
 			j_nfall_the_masked = {
 				name = {
 					"The Masked",
 				},
 				text = {
 					"Scored {C:spades}Spades{} give {X:nfall_echips,C:white}^#3#{C:chips} Chips",
-					"increases by {X:nfall_echips,C:white}^#1#{} for each",
+					"increases by {X:nfall_echips,C:white}#1#{} for each",
 					"empty {C:attention}Joker Slot{}",
 					"Max of {X:nfall_echips,C:white}^#2#{}",
 				},
@@ -83,7 +83,10 @@ return {
 		dictionary = {
 			k_nfall_fabled = "Fabled",
 			k_nfall_cataclysmic = "Cataclysmic",
+			k_nfall_fail = "Failed!",
 		},
-		v_dictionary = {},
+		v_dictionary = {
+			k_nfall_money = "+$#1#",
+		},
 	},
 }

@@ -1,9 +1,9 @@
 SMODS.Joker({
 	key = "the_masked",
-	cost = "10",
+	cost = "12",
 	discovered = true,
 	rarity = 3,
-    blueprint_compat = true,
+	blueprint_compat = true,
 	config = {
 		extra = {
 			echips = 0.02,
@@ -32,4 +32,3 @@ SMODS.Joker({
 		end
 	end,
 })
-
