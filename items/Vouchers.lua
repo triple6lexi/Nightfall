@@ -59,7 +59,7 @@ SMODS.Voucher({
 })
 
 SMODS.Voucher({
-	key = "handlevel",
+	key = "cosmic_ray",
 	atlas = "vouchers",
 	pos = {
 		x = 0,
@@ -71,9 +71,9 @@ SMODS.Voucher({
 		if context.using_consumeable and context.consumeable.ability.set == "Spectral" then
 			SMODS.upgrade_poker_hands({
 				hands = {
-					pseudorandom_element(SMODS.PokerHands, "nfall_handlevelvoucher").key,
-					pseudorandom_element(SMODS.PokerHands, "nfall_handlevelvoucher").key,
-					pseudorandom_element(SMODS.PokerHands, "nfall_handlevelvoucher").key,
+					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
+					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
+					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
 				},
 				level_up = 1,
 			})

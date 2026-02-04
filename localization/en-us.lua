@@ -63,6 +63,15 @@ return {
 					"{C:green}Rerolls{} per shop",
 				},
 			},
+			v_nfall_cosmic_ray = {
+				name = {
+					"Cosmic Ray", -- credit to thunder edge for name idea
+				},
+				text = {
+					"Level up 3 random {C:attention}poker hands{}",
+					"when a {C:spectral}Spectral{} card is used",
+				},
+			},
 		},
 		Spectral = {},
 		Tag = {},
