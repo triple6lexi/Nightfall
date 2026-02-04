@@ -1,5 +1,5 @@
 SMODS.Joker({
-	key = "cryptocurrency",
+	key = "spare_change",
 	discovered = true,
 	rarity = 1,
 	blueprint_compat = false,

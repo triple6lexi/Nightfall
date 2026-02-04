@@ -13,9 +13,9 @@ return {
 		},
 		Joker = {
 			-- main jokers
-			j_nfall_cryptocurrency = {
+			j_nfall_spare_change = {
 				name = {
-					"Cryptocurrency",
+					"Spare Change",
 				},
 				text = {
 					"If you are under the",
@@ -70,6 +70,15 @@ return {
 				text = {
 					"Level up 3 random {C:attention}poker hands{}",
 					"when a {C:spectral}Spectral{} card is used",
+				},
+			},
+			v_nfall_cosmic_ray2 = {
+				name = {
+					"Cosmic Ray2",
+				},
+				text = {
+					"Level up 3 random {C:attention}poker hands{}",
+					"when any {C:attention}Consumable{} is used",
 				},
 			},
 		},

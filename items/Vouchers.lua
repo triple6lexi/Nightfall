@@ -80,3 +80,27 @@ SMODS.Voucher({
 		end
 	end,
 })
+
+SMODS.Voucher({
+	key = "cosmic_ray2",
+	atlas = "vouchers",
+	pos = {
+		x = 1,
+		y = 1,
+	},
+	discovered = true,
+	requires = { "v_nfall_cosmic_ray" },
+	cost = 20,
+	calculate = function(self, card, context)
+		if context.using_consumeable and not context.consumeable.ability.set == "Spectral" then -- jank but works :money_mouth_face:
+			SMODS.upgrade_poker_hands({
+				hands = {
+					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
+					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
+					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
+				},
+				level_up = 1,
+			})
+		end
+	end,
+})
