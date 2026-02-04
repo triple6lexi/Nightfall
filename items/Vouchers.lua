@@ -92,15 +92,16 @@ SMODS.Voucher({
 	requires = { "v_nfall_cosmic_ray" },
 	cost = 20,
 	calculate = function(self, card, context)
-		if context.using_consumeable and not context.consumeable.ability.set == "Spectral" then -- jank but works :money_mouth_face:
+		if context.using_consumeable then -- i dont want spectrals to level up 6 but idk :scream:
 			SMODS.upgrade_poker_hands({
 				hands = {
-					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
-					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
-					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
+					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray2").key,
+					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray2").key,
+					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray2").key,
 				},
 				level_up = 1,
 			})
+			--end
 		end
 	end,
 })

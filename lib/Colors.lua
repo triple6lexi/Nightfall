@@ -1,6 +1,5 @@
 -- taken from Aquillarri
 local nfall_colors = {
-
 	SMODS.Gradient({
 		key = "fabled",
 		colours = {
@@ -8,6 +7,14 @@ local nfall_colors = {
 			HEX("edcd4b"),
 		},
 		cycle = 2,
+	}),
+	SMODS.Gradient({
+		key = "exalted",
+		colours = {
+			HEX("68708C"),
+			HEX("4D76BD"),
+		},
+		cycle = 3,
 	}),
 	SMODS.Gradient({
 		key = "cataclysmic",
