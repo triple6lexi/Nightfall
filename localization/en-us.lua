@@ -72,9 +72,9 @@ return {
 					"when a {C:spectral}Spectral{} card is used",
 				},
 			},
-			v_nfall_cosmic_ray2 = {
+			v_nfall_galactic_shimmer = {
 				name = {
-					"Cosmic Ray2",
+					"Galactic Shimmer",
 				},
 				text = {
 					"Level up 3 random {C:attention}poker hands{}",
