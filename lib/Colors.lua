@@ -17,12 +17,20 @@ local nfall_colors = {
 		cycle = 3,
 	}),
 	SMODS.Gradient({
+		key = "voidborn",
+		colours = {
+			HEX("9300C9"),
+			HEX("000000"),
+		},
+		cycle = 4,
+	}),
+	SMODS.Gradient({
 		key = "cataclysmic",
 		colours = {
 			HEX("8f0000"),
 			HEX("400000"),
 		},
-		cycle = 4,
+		cycle = 5,
 	}),
 	SMODS.Gradient({
 		key = "echips",
@@ -43,7 +51,7 @@ local nfall_colors = {
 	SMODS.Gradient({
 		key = "mod_text",
 		colours = {
-			HEX("fda64b"),
+			HEX("ef9847"),
 			HEX("683417"),
 		},
 		cycle = 6,

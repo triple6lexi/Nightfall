@@ -69,14 +69,16 @@ SMODS.Voucher({
 	cost = 10,
 	calculate = function(self, card, context)
 		if context.using_consumeable and context.consumeable.ability.set == "Spectral" then
-			SMODS.upgrade_poker_hands({
-				hands = {
-					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
-					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
-					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
-				},
-				level_up = 1,
-			})
+			if not G.GAME.used_vouchers["v_nfall_cosmic_ray2"] then
+				SMODS.upgrade_poker_hands({
+					hands = {
+						pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
+						pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
+						pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray").key,
+					},
+					level_up = 1,
+				})
+			end
 		end
 	end,
 })
@@ -92,7 +94,7 @@ SMODS.Voucher({
 	requires = { "v_nfall_cosmic_ray" },
 	cost = 15,
 	calculate = function(self, card, context)
-		if context.using_consumeable then -- i dont want spectrals to level up 6 but idk :scream:
+		if context.using_consumeable then
 			SMODS.upgrade_poker_hands({
 				hands = {
 					pseudorandom_element(SMODS.PokerHands, "nfall_vcosmic_ray2").key,
@@ -101,7 +103,6 @@ SMODS.Voucher({
 				},
 				level_up = 1,
 			})
-			--end
 		end
 	end,
 })
