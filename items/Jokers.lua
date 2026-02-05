@@ -39,12 +39,75 @@ SMODS.Joker({
 	end,
 })
 
---[[SMODS.Joker({ -- randomized ish effect, can be upgraded by sacrificing consumables to it making its effects stronger, idk the whole ability yet so ill code it later
+SMODS.Joker({ -- can be upgraded by sacrificing consumables to it making its effects stronger
 	key = "old_book",
+	discovered = true,
+	cost = 16,
+	blueprint_compat = true,
+	perishable_compat = false,
 	rarity = "nfall_fabled",
 	config = {
 		extra = {
-
+			chips = 0,
+			mult = 0,
+			xmult = 1,
+			chips_g = 25,
+			mult_g = 5,
+			xmult_g = 0.5,
+			chips_g2 = 5,
+			mult_g2 = 1,
+			xmult_g2 = 0.1,
 		},
 	},
-})]]
+	loc_vars = function(self, info_queue, card)
+		return {
+			vars = {
+				card.ability.extra.chips,
+				card.ability.extra.mult,
+				card.ability.extra.xmult,
+				card.ability.extra.chips_g,
+				card.ability.extra.mult_g,
+				card.ability.extra.xmult_g,
+			},
+		}
+	end,
+	calculate = function(self, card, context)
+		if context.setting_blind and not context.blueprint and G.consumeables.cards[1] then
+			for i = 1, #G.consumeables.cards do
+				if G.consumeables.cards[i].ability.set == "Planet" then
+					card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chips_g
+					G.consumeables.cards[i]:start_dissolve()
+					card:juice_up(0.8, 0.8)
+				elseif G.consumeables.cards[i].ability.set == "Tarot" then
+					card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_g
+					G.consumeables.cards[i]:start_dissolve()
+					card:juice_up(0.8, 0.8)
+				elseif G.consumeables.cards[i].ability.set == "Spectral" then
+					card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_g
+					G.consumeables.cards[i]:start_dissolve()
+					card:juice_up(0.8, 0.8)
+				else
+					card.ability.extra.chips = card.ability.extra.chips
+						+ (card.ability.extra.chips_g2 * (G.consumeables.cards[i].cost / 1.5))
+					card.ability.extra.mult = card.ability.extra.mult
+						+ (card.ability.extra.mult_g2 * (G.consumeables.cards[i].cost / 1.5))
+					card.ability.extra.xmult = card.ability.extra.xmult
+						+ (card.ability.extra.xmult_g2 * (G.consumeables.cards[i].cost / 1.5))
+					G.consumeables.cards[i]:start_dissolve()
+					card:juice_up(0.8, 0.8)
+				end
+			end
+			return {
+				message = localize("k_upgrade_ex"),
+				colour = G.C.ATTENTION,
+			}
+		end
+		if context.joker_main then
+			return {
+				chips = card.ability.extra.chips,
+				mult = card.ability.extra.mult,
+				xmult = card.ability.extra.xmult,
+			}
+		end
+	end,
+})

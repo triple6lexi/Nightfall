@@ -27,7 +27,20 @@ return {
 				name = {
 					"Old Book",
 				},
-				text = {},
+				text = {
+					{
+						"Destroy all {C:attention}consumables",
+						"when {C:attention}Blind{} is selected",
+					},
+					{
+						"When a {C:planet}Planet{} card is destroyed gain {C:chips}+#4#{} Chips",
+						"When a {C:tarot}Tarot{} card is destroyed gain {C:mult}+#5#{} Mult",
+						"When a {C:spectral}Spectral{} card is destroyed gain {X:mult,C:white}X#6#{} Mult",
+					},
+					{
+						"{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips {C:mult}+#2#{C:inactive} Mult {X:mult,C:white}X#3#{C:inactive} Mult)",
+					},
+				},
 			},
 			-- jokers that require amulet below
 			j_nfall_the_masked = {
@@ -82,7 +95,19 @@ return {
 				},
 			},
 		},
-		Spectral = {},
+		Spectral = {
+			c_nfall_expectation = {
+				name = {
+					"Expectation", -- credit to lily for name idea
+				},
+				text = {
+					"Fixed {C:green}1 in 3{} chance to create",
+					"a {C:nfall_fabled}Fabled Joker",
+					"if that fails create",
+					"an {C:uncommon}Uncommon{} Joker",
+				},
+			},
+		},
 		Tag = {},
 		Other = {
 			interest_cap = {
