@@ -102,7 +102,7 @@ return {
 				},
 				text = {
 					"Fixed {C:green}1 in 3{} chance to create",
-					"a {C:nfall_fabled}Fabled Joker",
+					"a {C:nfall_fabled}Fabled{} Joker",
 					"if that fails create",
 					"an {C:uncommon}Uncommon{} Joker",
 				},
