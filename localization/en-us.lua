@@ -33,9 +33,9 @@ return {
 						"when {C:attention}Blind{} is selected",
 					},
 					{
-						"When a {C:planet}Planet{} card is destroyed gain {C:chips}+#4#{} Chips,",
-						"When a {C:tarot}Tarot{} card is destroyed gain {C:mult}+#5#{} Mult,",
-						"When a {C:spectral}Spectral{} card is destroyed gain {X:mult,C:white}X#6#{} Mult",
+						"When a {C:planet}Planet{} card is destroyed, gain {C:chips}+#4#{} Chips",
+						"When a {C:tarot}Tarot{} card is destroyed gain, {C:mult}+#5#{} Mult",
+						"When a {C:spectral}Spectral{} card is destroyed, gain {X:mult,C:white}X#6#{} Mult",
 					},
 					{
 						"{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips, {C:mult}+#2#{C:inactive} Mult, {X:mult,C:white}X#3#{C:inactive} Mult)",

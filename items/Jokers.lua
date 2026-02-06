@@ -3,6 +3,7 @@ SMODS.Joker({
 	discovered = true,
 	rarity = 1,
 	blueprint_compat = false,
+	perishable_compat = true,
 	config = {
 		extra = {
 			money = 5,
@@ -88,11 +89,11 @@ SMODS.Joker({ -- can be upgraded by sacrificing consumables to it making its eff
 					card:juice_up(0.8, 0.8)
 				else
 					card.ability.extra.chips = card.ability.extra.chips
-						+ (card.ability.extra.chips_g2 * (G.consumeables.cards[i].cost / 1.5))
+						+ (card.ability.extra.chips_g2 * math.ceil(G.consumeables.cards[i].cost / 1.5))
 					card.ability.extra.mult = card.ability.extra.mult
-						+ (card.ability.extra.mult_g2 * (G.consumeables.cards[i].cost / 1.5))
+						+ (card.ability.extra.mult_g2 * math.ceil(G.consumeables.cards[i].cost / 1.5))
 					card.ability.extra.xmult = card.ability.extra.xmult
-						+ (card.ability.extra.xmult_g2 * (G.consumeables.cards[i].cost / 1.5))
+						+ (card.ability.extra.xmult_g2 * math.ceil(G.consumeables.cards[i].cost / 1.5))
 					G.consumeables.cards[i]:start_dissolve()
 					card:juice_up(0.8, 0.8)
 				end
@@ -111,3 +112,20 @@ SMODS.Joker({ -- can be upgraded by sacrificing consumables to it making its eff
 		end
 	end,
 })
+
+--[[SMODS.Joker({
+	key = "evil",
+	discovered = true,
+	rarity = "nfall_exalted",
+	blueprint_compat = false,
+	perishable_compat = false,
+	config = {
+		extra = {},
+	},
+	loc_vars = function(self, info_queue, card)
+		return {
+			vars = {},
+		}
+	end,
+	calculate = function(self, card, context) end,
+})]]

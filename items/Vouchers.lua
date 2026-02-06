@@ -5,6 +5,13 @@ SMODS.Atlas({
 	py = 95,
 })
 
+SMODS.Atlas({
+	key = "t3_vouchers",
+	path = "t3_Vouchers.png",
+	px = 71,
+	py = 95,
+})
+
 SMODS.Voucher({
 	key = "freeroll",
 	atlas = "vouchers",
@@ -83,64 +90,11 @@ SMODS.Voucher({
 	end,
 })
 
-SMODS.DrawStep({ -- ripped straight from smods bc idfk what im doing
-	key = "nfall_soul_pos",
-	order = 60,
-	func = function(self)
-		if
-			self.config.center.key == "v_nfall_galactic_shimmer"
-			and self.config.center.soul_pos
-			and (self.config.center.discovered or self.bypass_discovery_center)
-		then
-			local scale_mod = 0.07
-				+ 0.02 * math.sin(1.8 * G.TIMERS.REAL)
-				+ 0.00
-					* math.sin((G.TIMERS.REAL - math.floor(G.TIMERS.REAL)) * math.pi * 14)
-					* (1 - (G.TIMERS.REAL - math.floor(G.TIMERS.REAL))) ^ 3
-			local rotate_mod = 0.05 * math.sin(1.219 * G.TIMERS.REAL)
-				+ 0.00
-					* math.sin(G.TIMERS.REAL * math.pi * 5)
-					* (1 - (G.TIMERS.REAL - math.floor(G.TIMERS.REAL))) ^ 2
-			if type(self.config.center.soul_pos.draw) == "function" then
-				self.config.center.soul_pos.draw(self, scale_mod, rotate_mod)
-			elseif self.children.floating_sprite then
-				self.children.floating_sprite:draw_shader(
-					"dissolve",
-					0,
-					nil,
-					nil,
-					self.children.center,
-					scale_mod,
-					rotate_mod,
-					nil,
-					0.1 + 0.03 * math.sin(1.8 * G.TIMERS.REAL),
-					nil,
-					0.6
-				)
-				self.children.floating_sprite:draw_shader(
-					"dissolve",
-					nil,
-					nil,
-					nil,
-					self.children.center,
-					scale_mod,
-					rotate_mod
-				)
-			end
-		end
-	end,
-	conditions = { vortex = false, facing = "front" },
-})
-
 SMODS.Voucher({
 	key = "galactic_shimmer",
 	atlas = "vouchers",
 	pos = {
 		x = 1,
-		y = 1,
-	},
-	soul_pos = {
-		x = 2,
 		y = 1,
 	},
 	draw = function(self, card, layer)
@@ -162,5 +116,63 @@ SMODS.Voucher({
 				level_up = 1,
 			})
 		end
+	end,
+})
+
+---------------------
+---Tier 3 Vouchers---
+---------------------
+
+SMODS.Voucher({
+	key = "long_arms",
+	atlas = "t3_vouchers",
+	pos = {
+		x = 0,
+		y = 0,
+	},
+	requires = { "v_nacho_tong" },
+	discovered = true,
+	cost = 15,
+	config = {
+		extra = {
+			pcl = 1,
+		},
+	},
+	loc_vars = function(self, info_queue, card)
+		return {
+			vars = {
+				card.ability.extra.pcl,
+			},
+		}
+	end,
+	redeem = function(self, card)
+		SMODS.change_play_limit(card.ability.extra.pcl)
+	end,
+})
+
+SMODS.Voucher({
+	key = "throw_away",
+	atlas = "t3_vouchers",
+	pos = {
+		x = 1,
+		y = 0,
+	},
+	requires = { "v_recyclomancy" },
+	discovered = true,
+	cost = 15,
+	config = {
+		extra = {
+			dl = 1,
+		},
+	},
+	loc_vars = function(self, info_queue, card)
+		return {
+			vars = {
+				card.ability.extra.dl,
+			},
+		}
+	end,
+	redeem = function(self, card)
+		SMODS.change_discard_limit(card.ability.extra.dl)
 	end,
 })
