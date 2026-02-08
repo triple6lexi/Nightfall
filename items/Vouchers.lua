@@ -97,11 +97,6 @@ SMODS.Voucher({
 		x = 1,
 		y = 1,
 	},
-	draw = function(self, card, layer)
-		if (layer == "card" or layer == "both") and card.sprite_facing == "front" then
-			card.children.center:draw_shader("booster", nil, card.ARGS.send_to_shader)
-		end
-	end,
 	discovered = true,
 	requires = { "v_nfall_cosmic_ray" },
 	cost = 15,
@@ -122,7 +117,7 @@ SMODS.Voucher({
 ---------------------
 ---Tier 3 Vouchers---
 ---------------------
-
+--[[
 SMODS.Voucher({
 	key = "long_arms",
 	atlas = "t3_vouchers",
@@ -176,3 +171,4 @@ SMODS.Voucher({
 		SMODS.change_discard_limit(card.ability.extra.dl)
 	end,
 })
+]]

@@ -8,6 +8,8 @@ assert(SMODS.load_file("lib/Misc.lua"))()
 assert(SMODS.load_file("items/Decks.lua"))()
 assert(SMODS.load_file("items/Vouchers.lua"))()
 assert(SMODS.load_file("items/Jokers.lua"))()
+--assert(SMODS.load_file("items/Tarots.lua"))()
+--assert(SMODS.load_file("items/Planets.lua"))()
 assert(SMODS.load_file("items/Spectrals.lua"))()
 --assert(SMODS.load_file("items/Boosters.lua"))()
 --assert(SMODS.load_file("items/Misc.lua"))()
@@ -15,6 +17,8 @@ assert(SMODS.load_file("items/Spectrals.lua"))()
 -- amulet required content
 if (SMODS.Mods["Amulet"] or {}).can_load then
 	assert(SMODS.load_file("items/amulet/Jokers.lua"))()
+	--assert(SMODS.load_file("items/amulet/Enhancements.lua"))()
+	--assert(SMODS.load_file("items/amulet/Tarots.lua"))()
 end
 
 SMODS.Atlas({
